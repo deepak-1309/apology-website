@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry, My Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>I'm Sorry, Sweetheart</h1>
+        <p>I know I made mistakes, and I feel terrible about it. You mean the world to me, and I never want to hurt you.</p>
+        <p>Please forgive me?</p>
+
+        <div class="memories">
+            <h2>Our Digital Diary</h2>
+
+            <!-- June Photo -->
+            <div class="month">
+                <h3>June</h3>
+                <img src="june-photo.jpg" alt="June Memories">
+                <p>Our first month together was amazing. I’ll never forget all the wonderful memories we made. Here's to many more months and years of love.</p>
+            </div>
+
+            <!-- July Photo -->
+            <div class="month">
+                <h3>July</h3>
+                <img src="july-photo.jpg" alt="July Memories">
+                <p>Our second month was full of laughter and adventure. I’m so happy we are together.</p>
+            </div>
+
+            <!-- August Photo -->
+            <div class="month">
+                <h3>August</h3>
+                <img src="august-photo.jpg" alt="August Memories">
+                <p>This month was all about new experiences and deepening our bond. I love you more every day.</p>
+            </div>
+
+            <!-- September Photo -->
+            <div class="month">
+                <h3>September</h3>
+                <img src="september-photo.jpg" alt="September Memories">
+                <p>September brought us closer than ever. I cherish every moment with you.</p>
+            </div>
+
+            <!-- October Photo -->
+            <div class="month">
+                <h3>October</h3>
+                <img src="october-photo.jpg" alt="October Memories">
+                <p>October was filled with beautiful moments, and I’m thankful for you.</p>
+            </div>
+
+            <!-- November Photo -->
+            <div class="month">
+                <h3>November</h3>
+                <img src="november-photo.jpg" alt="November Memories">
+                <p>In November, we continued growing together. I’m so lucky to have you by my side.</p>
+            </div>
+
+            <!-- December Photo -->
+            <div class="month">
+                <h3>December</h3>
+                <img src="december-photo.jpg" alt="December Memories">
+                <p>December was full of joy and love. I’m excited for our future.</p>
+            </div>
+
+            <!-- February Photo -->
+            <div class="month">
+                <h3>February</h3>
+                <img src="february-photo.jpg" alt="February Memories">
+                <p>February has been full of love and happiness. I’m grateful for every moment with you.</p>
+            </div>
+
+            <p>Here's to many more years together. I love you so much, my baby.</p>
+        </div>
+
+        <!-- Button to Trigger Popup -->
+        <button id="popupButton">Click on this, Wifey ❤️</button>
+
+        <!-- Popup Message at the Bottom -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <p>Please forgive me, my love. <br> I am so sorry for everything.</p>
+                <button onclick="handleResponse('yes')">Yes</button>
+                <button onclick="handleResponse('no')">No</button>
+            </div>
+        </div>
+
+        <!-- The Image to Show when "Yes" is clicked -->
+        <img id="forgiveImage" src="forgive-photo.jpg" alt="Forgive Me" style="display:none;width:320px;height:240px;">
+
+    </div>
+
+    <script>
+        let noClicks = 0; // Track the number of "No" clicks
+        const popupButton = document.getElementById('popupButton');
+        const popup = document.getElementById('popup');
+        const forgiveImage = document.getElementById('forgiveImage');
+        const popupMessage = document.querySelector('.popup-content p');
+
+        // Function to handle Yes and No button clicks
+        function handleResponse(response) {
+            if (response === 'yes') {
+                popup.style.display = 'none';  // Hide the pop-up
+                forgiveImage.style.display = 'block';  // Show the image
+            } else {
+                if (noClicks === 0) {
+                    popupMessage.innerHTML = "Click Yes, Please 😘";
+                } else if (noClicks === 1) {
+                    popupMessage.innerHTML = "Click Yes, my love, and see what happens, hehehe 😊";
+                } else if (noClicks === 2) {
+                    popupMessage.innerHTML = "God, how many no's? 😭😭😭";
+                } else if (noClicks === 3) {
+                    popupMessage.innerHTML = "Hehehehe, click it, my love ❤️";
+                } else {
+                    popupMessage.innerHTML = "No, no, no! But I love you 😘💖";
+                    noClicks = 0; // Reset after 5 clicks
+                }
+                noClicks++;  // Increment click counter
+            }
+        }
+
+        // Show the popup when the button is clicked
+        popupButton.onclick = function() {
+            popup.style.display = 'block';  // Show the popup
+        };
+    </script>
+
+</body>
+</html>
